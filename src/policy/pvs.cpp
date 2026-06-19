@@ -3,7 +3,7 @@
 #include "pvs.hpp"
 
 
-// PVS (negascout): first child gets full window, rest get null-window probe first
+// PVS: first child gets full window, rest get null-window probe first
 // re-search only happens when a move fails high (beats alpha unexpectedly)
 int PVS::eval_ctx(
     State *state,
