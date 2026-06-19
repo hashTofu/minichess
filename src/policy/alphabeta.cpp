@@ -3,7 +3,7 @@
 #include "alphabeta.hpp"
 
 
-// negamax with alpha-beta pruning
+// negamax + alpha-beta pruning
 int AlphaBeta::eval_ctx(
     State *state,
     int depth,
@@ -29,7 +29,7 @@ int AlphaBeta::eval_ctx(
     history.push(state->hash());
 
     if(depth <= 0){
-        history.pop(state->hash()); // quiesce manages its own push/pop
+        history.pop(state->hash()); // pop here; quiesce will re-push
         if(p.use_quiescence)
             return quiesce(state, alpha, beta, history, ply, ctx, p);
         return state->evaluate(p.use_kp_eval, p.use_eval_mobility, &history);
