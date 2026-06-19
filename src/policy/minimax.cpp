@@ -3,7 +3,7 @@
 #include "minimax.hpp"
 
 
-// plain negamax, no pruning
+// plain negamax without pruning
 int MiniMax::eval_ctx(
     State *state,
     int depth,
